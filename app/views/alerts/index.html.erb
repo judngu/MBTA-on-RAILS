@@ -1,0 +1,6 @@
+<h1>MBTA alerts</h1>
+	<% @alert_data["alerts"].each do |alert| %>
+		<% time = alert["effect_periods"][0].try(:[],"effect_start") %>
+		<p><%= Time.at(time.to_i).strftime('%l:%M %p on %A, %B %d %Y') %> <strong><%= alert["severity"].upcase%> - <%= alert["effect_name"]%>: <%= alert["short_header_text"]%></strong><br>
+			<%= alert["description_text"]%></p>
+	<% end %>
