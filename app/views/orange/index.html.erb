@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<% @orange_routes.each do |orangeline| %>
+			<% orangeline["direction"].each do |direction| %>
+				<td>
+					<p><%= direction["direction_name"] %></p>
+					<% direction["stop"].each do |stop| %>
+						<p><a href="orange/<%= stop["parent_station"] %>"><%= stop["parent_station_name"] %></a></p>
+				<% end %>
+				</td>
+			<% end %>
+		<% end %>
+	</tr>
+</table>

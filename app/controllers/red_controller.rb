@@ -11,8 +11,11 @@ class RedController < ApplicationController
 		red2 = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=933_&format=json")
 		response2 = Net::HTTP.get(red2)
 
-		@redline1 = JSON.parse(response)
-		@redline2 = JSON.parse(response2)
+		redline1 = JSON.parse(response)
+		redline2 = JSON.parse(response2)
+
+		@red_routes = [redline1, redline2]
+
 
 	end
 
@@ -22,6 +25,5 @@ class RedController < ApplicationController
 		uri = URI("http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key=#{api_key}&stop=#{station}&format=json")
 		response = Net::HTTP.get(uri)
 		@station_data = JSON.parse(response)
-		#binding.pry
 	end
 end

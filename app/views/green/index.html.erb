@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<% @green_routes.each do |greenline| %>
+			<% greenline["direction"].each do |direction| %>
+				<td>
+					<p><%= direction["direction_name"] %></p>
+					<% direction["stop"].each do |stop| %>
+						<p><a href="blue/<%= stop["parent_station"] %>"><%= stop["parent_station_name"] %></a></p>
+				<% end %>
+				</td>
+			<% end %>
+		<% end %>
+	</tr>
+</table>
