@@ -1,0 +1,10 @@
+<h1><%= @station_data["stop_name"] %>: <%= @station_data["mode"][0]["route"][0]["route_name"] %> <h2>
+
+	<p><% @station_data["mode"][0]["route"].each do |route| %>
+		<% route["direction"].each do |direction| %>
+			<p><%= direction["direction_name"] %></p>
+				<% direction["trip"].each do |trip| %>
+					<p><%= trip["trip_headsign"] %> <%= trip["pre_away"].to_i/60 %> mins</p>
+				<% end %>
+		<% end %>
+	<% end %>
