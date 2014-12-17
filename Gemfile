@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 gem 'json'
+gem 'pg'
 gem 'dotenv'
 gem 'pry-rails'
+gem 'foundation-rails'
+group :development do
+  gem 'rails_layout'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
