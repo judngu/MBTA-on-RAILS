@@ -3,7 +3,7 @@ require 'uri'
 
 class OrangeController < ApplicationController
 	def index
-		api_key = ENV["MBTA_KEY"]
+		api_key = ENV["api_key"]
 		routes = [903, 913]
 		@orange_routes = []
 		@green_routes = []
@@ -17,7 +17,7 @@ class OrangeController < ApplicationController
 
 	def show
 		station = params[:id]
-		api_key = ENV["MBTA_KEY"]
+		api_key = ENV["api_key"]
 		uri = URI("http://realtime.mbta.com/developer/api/v2/predictionsbystop?api_key=#{api_key}&stop=#{station}&format=json")
 		response = Net::HTTP.get(uri)
 		@station_data = JSON.parse(response)
