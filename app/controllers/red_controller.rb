@@ -3,7 +3,7 @@ require 'uri'
 
 class RedController < ApplicationController
 	def index
-		api_key = ENV["MBTA_KEY"]
+		api_key = ENV["api_key"]
 		routes = [931, 933]
 		@red_routes = []
 		routes.each do |route_num|
