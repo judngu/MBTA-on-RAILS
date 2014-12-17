@@ -4,17 +4,15 @@ require 'uri'
 class OrangeController < ApplicationController
 	def index
 		api_key = ENV["MBTA_KEY"]
-		orange1 = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=903_&format=json")
-		response = Net::HTTP.get(orange1)
-
-		api_key = ENV["MBTA_KEY"]
-		orange2 = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=913_&format=json")
-		response2 = Net::HTTP.get(orange2)
-
-		orangeline1 = JSON.parse(response)
-		orangeline2 = JSON.parse(response2)
-
-		@orange_routes = [orangeline1, orangeline2]
+		routes = [903, 913]
+		@orange_routes = []
+		@green_routes = []
+		routes.each do |route_num|
+			uri = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=#{route_num}_&format=json")
+			response = Net::HTTP.get(uri)
+			route_json = JSON.parse(response)
+			@orange_routes << route_json
+		end
 	end
 
 	def show
@@ -24,5 +22,4 @@ class OrangeController < ApplicationController
 		response = Net::HTTP.get(uri)
 		@station_data = JSON.parse(response)
 	end
-
 end

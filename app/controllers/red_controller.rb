@@ -4,19 +4,17 @@ require 'uri'
 class RedController < ApplicationController
 	def index
 		api_key = ENV["MBTA_KEY"]
-		red1 = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=931_&format=json")
-		response = Net::HTTP.get(red1)
+		routes = [931, 933]
+		@red_routes = []
+		routes.each do |route_num|
+			uri = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=#{route_num}_&format=json")
+			response = Net::HTTP.get(uri)
+			route_json = JSON.parse(response)
+			@red_routes << route_json
+		end
+	end
 
-		api_key = ENV["MBTA_KEY"]
-		red2 = URI("http://realtime.mbta.com/developer/api/v2/stopsbyroute?api_key=#{api_key}&route=933_&format=json")
-		response2 = Net::HTTP.get(red2)
-
-		redline1 = JSON.parse(response)
-		redline2 = JSON.parse(response2)
-
-		@red_routes = [redline1, redline2]
-
-
+	def direction
 	end
 
 	def show
