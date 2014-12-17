@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
+
+ruby "2.0.0"
+
 gem 'json'
 gem 'pg'
 gem 'dotenv'
 gem 'pry-rails'
 gem 'foundation-rails'
+gem 'rails_12factor', group: :production
 group :development do
   gem 'rails_layout'
 end
