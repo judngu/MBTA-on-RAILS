@@ -1,0 +1,20 @@
+<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Redline</a>
+<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <% @redstops.each do |stop| %>
+    <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+  <% end %>
+</ul><br>
+
+<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Blueline</a>
+<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <% @bluestops.each do |stop| %>
+    <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+  <% end %>
+</ul><br>
+
+<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Orangeline</a>
+<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <% @orangestops.each do |stop| %>
+    <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+  <% end %>
+</ul>

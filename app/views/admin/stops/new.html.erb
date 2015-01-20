@@ -1,0 +1,9 @@
+<%= form_for @stop do |f| %>
+  <%= f.label :train_id %>
+  <%= f.collection_select(:train_id, Train.all, :id, :name) %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :parent_station %>
+  <%= f.text_field :parent_station %>
+  <%= f.submit "Submit" %>
+<% end %>

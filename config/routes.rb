@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
+  root 'homes#index'
+  devise_for :users
+  resources :trains
+  resources :routes
+  resources :stops
+  
+  namespace :admin do
+    resources :trains
+    resources :routes
+    resources :stops
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-  get 'alerts' => 'alerts#index'
-  get 'red' => 'red#index'
-  get 'red/:id' => 'red#show'
-  get 'orange' => 'orange#index'
-  get 'orange/:id' => 'orange#show'
-  get 'blue' => 'blue#index'
-  get 'blue/:id' => 'blue#show'
-  get 'green' => 'green#index'
-  get 'green/:id' => 'green#show'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :products
+  #   resources :products
 
   # Example resource route with options:
   #   resources :products do
