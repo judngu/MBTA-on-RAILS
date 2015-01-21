@@ -1,20 +1,42 @@
-<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Redline</a>
-<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-  <% @redstops.each do |stop| %>
-    <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
-  <% end %>
-</ul><br>
+<img id="bgIMG" src="/assets/bg.jpg">
 
-<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Blueline</a>
-<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-  <% @bluestops.each do |stop| %>
-    <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
-  <% end %>
-</ul><br>
+<div id="train_index" class="row">
+  <div class="larger-3 medium-3 columns">
+    <%= image_tag("redline.png") %>
+    <a class="button expand medium" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Redline</a>
+    <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <% @redstops.each do |stop| %>
+        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+      <% end %>
+    </ul><br>
+  </div>
 
-<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Orangeline</a>
-<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-  <% @orangestops.each do |stop| %>
-    <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
-  <% end %>
-</ul>
+  <div class="larger-3 medium-3 columns">
+    <%= image_tag("blueline.png") %>
+    <a class="button expand" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Blueline</a>
+    <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <% @bluestops.each do |stop| %>
+        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+      <% end %>
+    </ul><br>
+  </div>
+
+  <div class="larger-3 medium-3 columns">
+    <%= image_tag("orangeline.png") %>
+    <a class="button expand" data-dropdown="drop3" aria-controls="drop3" aria-expanded="false">Orangeline</a>
+    <ul id="drop3" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <% @orangestops.each do |stop| %>
+        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="larger-3 medium-3 columns">
+    <%= image_tag("greenline.png") %>
+    <a class="button expand" data-dropdown="drop4" aria-controls="drop4" aria-expanded="false">GreenLine</a>
+    <ul id="drop4" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+      <% @orangestops.each do |stop| %>
+        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+      <% end %>
+    </ul>
+  </div>

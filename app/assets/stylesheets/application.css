@@ -13,5 +13,31 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+/**/
 
- */
+#bgIMG
+{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -999;
+  background-size: cover;
+}
+#train_index
+{
+  margin-top: 5%;
+}
+.button
+{
+  background-color: #444;
+  background-color: #444;
+  border-width: 5;
+  border-color: #000;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #444;
