@@ -15,7 +15,7 @@
  *= require foundation_and_overrides
 /**/
 
-#bgIMG
+.bgIMG
 {
   position: fixed;
   right: 0;
