@@ -42,3 +42,16 @@
 button:hover, button:focus, .button:hover, .button:focus {
   background-color: #444;
 }
+p {
+  color: #FFF;
+}
+#stopbox {
+  padding: 20px;
+  background-color: #444;
+}
+#stationbox {
+  background-color: #444;
+}
+h1 {
+  color: #FFF;
+}

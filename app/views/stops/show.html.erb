@@ -1,14 +1,31 @@
-<h1><%= @station_data["stop_name"] %>: <%= @station_data["mode"][0]["route"][0]["route_name"] %> </h1>
+<%= image_tag "bg.jpg", :class => "bgIMG" %>
 
-<p><% @station_data["mode"][0]["route"].each do |route| %>
-  <% route["direction"].each do |direction| %>
-    <p><%= direction["direction_name"] %></p>
-      <% direction["trip"].each do |trip| %>
-        <p><%= trip["trip_headsign"] %> <%= trip["pre_away"].to_i/60 %> mins</p>
-      <% end %>
+<div class= "row ">
+  <div id="stationbox" class="large-12 medium-12 columns">
+    <h1><%= @station_data["stop_name"] %>: <%= @station_data["mode"][0]["route"][0]["route_name"] %> </h1>
+  </div>
+</div>
+
+<div class="row">
+  <p><% @station_data["mode"][0]["route"].each do |route| %></p>
+    <% route["direction"].each do |direction| %>
+      <div class="large-3 medium-3 columns">
+        <div id="stopbox">
+          <p><%= direction["direction_name"] %> Arrivals:</p>
+            <% direction["trip"].each do |trip| %>
+              <p><%= trip["trip_headsign"] %> <%= trip["pre_away"].to_i/60 %> mins</p>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<% @station_data["alert_headers"].each do |alert| %>
-  <p><%= alert["effect_name"] %><%= alert["header_text"] %></p>
-<% end %>
+<div class= "row">
+  <div id="stationbox" class="large-12 medium-12 columns">
+    <% @station_data["alert_headers"].each do |alert| %>
+      <p><%= alert["effect_name"] %><%= alert["header_text"] %></p>
+    <% end %>
+  </div>
+</div>
+
