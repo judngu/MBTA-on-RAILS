@@ -36,8 +36,6 @@
     <%= image_tag("greenline.png") %>
     <a class="button expand" data-dropdown="drop4" aria-controls="drop4" aria-expanded="false">GreenLine</a>
     <ul id="drop4" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-      <% @orangestops.each do |stop| %>
-        <li><%= link_to "#{stop.name}", stop_path(stop.id) %></li>
-      <% end %>
+      Green Line stops coming soon!
     </ul>
   </div>

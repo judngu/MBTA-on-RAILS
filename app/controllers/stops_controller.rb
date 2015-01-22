@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+
 class StopsController < ApplicationController
 
   def show
