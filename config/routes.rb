@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :trains
   resources :routes
   resources :stops
-  
+
   namespace :admin do
     resources :trains
     resources :routes

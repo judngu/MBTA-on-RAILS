@@ -1,9 +1,9 @@
 class Admin::StopsController < ApplicationController
-  
+
   def new
     @stop = Stop.new
   end
-    
+
   def create
     @stop = Stop.new(stop_params)
     if @stop.save

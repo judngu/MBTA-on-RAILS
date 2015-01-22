@@ -7,7 +7,7 @@
     <a class="button expand medium" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Redline</a>
     <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
       <% @redstops.each do |stop| %>
-        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+        <li><%= link_to "#{stop.name}", stop_path(stop.id) %></li>
       <% end %>
     </ul><br>
   </div>
@@ -17,7 +17,7 @@
     <a class="button expand" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Blueline</a>
     <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
       <% @bluestops.each do |stop| %>
-        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+        <li><%= link_to "#{stop.name}", stop_path(stop.id) %></li>
       <% end %>
     </ul><br>
   </div>
@@ -27,7 +27,7 @@
     <a class="button expand" data-dropdown="drop3" aria-controls="drop3" aria-expanded="false">Orangeline</a>
     <ul id="drop3" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
       <% @orangestops.each do |stop| %>
-        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+        <li><%= link_to "#{stop.name}", stop_path(stop.id) %></li>
       <% end %>
     </ul>
   </div>
@@ -37,7 +37,7 @@
     <a class="button expand" data-dropdown="drop4" aria-controls="drop4" aria-expanded="false">GreenLine</a>
     <ul id="drop4" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
       <% @orangestops.each do |stop| %>
-        <li><%= link_to "#{stop.name}", train_path(stop.id) %></li>
+        <li><%= link_to "#{stop.name}", stop_path(stop.id) %></li>
       <% end %>
     </ul>
   </div>
