@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/judngu/MBTA-on-RAILS.png?label=ready&title=Ready)](https://waffle.io/judngu/MBTA-on-RAILS)
 MBTA-on-RAILS
 =============
 
